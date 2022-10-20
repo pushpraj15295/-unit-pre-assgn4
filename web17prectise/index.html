@@ -1,0 +1,93 @@
+<!-- Problem Statement :-
+You might have learnt about Stack data structures. It works on LIFO(last in first out) principle. In javascript this feature has been provided in the array itself. So you are curious to know how it works. So you want to implement this on your own.
+
+Description :-
+Create a custom Array constructor which will return an array object.
+It should have a property size based on the length of arguments passed.
+Add the arguments as key(index) value pairs in the Array object.
+Use the “.prototype” property to add custom methods to the Array.
+Add following methods :-
+.push // Should add an element at the end.
+.pop() // Should remove an element from the end.
+.top() // Should return the element at the last index.
+.print() // Should print the elements in a single line (e.g. [1,2,3,4]).
+.printReverse() // Should print the elements in a single line in reverse order.
+.size // Should return the length of the stack -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-left: 100px;
+        margin-top: 100px;
+      }
+      .innerDiv {
+        display: flex;
+        margin-left: 5px;
+      }
+      h4{
+          margin-left: 90px;
+          margin-top: 16px;
+          color: rgb(87, 67, 67);
+      }
+    
+    </style>
+  </head>
+
+  <body>
+    <h1>Admin Dashboard</h1>
+    <form id="Products" onSubmit="storeProducts()">
+     
+      <input id="name" type="text" placeholder="enter name of product" />
+      <input id="category" type="text" placeholder="Enter category"/>
+     <input id="image" type="text" placeholder="enter image url" />
+      <input id="price" type="text" placeholder="enter price" />
+      <select id="gender">
+          <option>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">FeMale</option>
+
+      </select>
+      
+      <input type="submit" value="Add Product" />
+      <button onClick="toProductsPage()"> Products Page</button>
+    </form>
+      
+  </body>
+</html>
+
+<script>
+    function Products(name1,category1,image1,price1,gender1){
+        this.name = name1,
+        this.category = category1,
+        this.image = image1,
+        this.price = price1,
+        this.gender = gender1
+    }
+  var arr=JSON.parse(localStorage.getItem('products'))||[]
+function storeProducts(e){
+    event.preventDefault();
+    var form = document.getElementById("Products");
+    var name = form.name.value;
+    var category = form.category.value;
+    var image = form.image.value;
+    var price = form.price.value;
+    var gender = form.gender.value;
+    
+    var pro = new Products(name,category,image,price,gender)
+    arr.push(pro)
+    console.log(arr)
+    localStorage.setItem('products', JSON.stringify(arr))
+}
+function toProductsPage(){
+  window.location = "product.html"
+
+}
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 80%;
+            height: auto;
+            margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-left: 100px;
+        margin-top: 100px;
+        border: none;
+      }
+      div{
+          text-align: center;
+          border: 1px solid black;
+          width: 190px;
+          border-radius: 10px;
+      }
+      img{
+          height: auto;
+          width: 100%;
+          border-radius: 10px;
+      }
+    
+
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    var products = JSON.parse(localStorage.getItem('products'));
+    products.forEach(function(elem,index){
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = elem.image
+        var name = document.createElement('p');
+        name.innerText = elem.name;
+        var gender  = document.createElement('p')
+        gender.innerText = elem.gender;
+        var category = document.createElement('p')
+        category.innerText = elem.category;
+        var price = document.createElement('p')
+        price.innerText = elem.price;;
+
+        var btn= document.createElement('button')
+        btn.innerText = "remove"
+        
+        btn.addEventListener("click",function(){
+            remove(elem,index);
+        })
+        var btn1 = document.createElement('button')
+        btn1.innerText = "sold"
+        btn1.addEventListener("click",function(){
+            btn1.style.backgroundColor = "red"
+        })
+
+       div.append(img,name,gender,category,price,btn,btn1);
+        document.querySelector('#container').append(div)
+    })
+    function remove(elem,index){
+       products.splice(index,1)
+       localStorage.setItem('products',JSON.stringify(products));
+       window.location.reload();
+    }
+    
+</script>
