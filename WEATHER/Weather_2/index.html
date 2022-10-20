@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="zip">
+        <div id="forecast"></div>
+</body>
+</html>
+
+<script>
+              let city = document.getElementById("zip").value;
+               const url= `https://pro.https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=89bf2685c7df944907e76877be9ad9e6.org/data/2.5/forecast/climate?zip=486001,+91&appid=668a3f7f17682d9521a8d7558ac6e552`
+
+               fetch(url)
+                  .then(function(res) {
+
+                    return response.json();
+                  })
+                  .then(function(res) {
+                      console.log(res)
+                      appender(res)
+                  })
+                  .catch(function(err) {
+                      console.log(err)
+                  })
+
+
+                function appender(data)  
+                {
+                    
+                }
+</script>

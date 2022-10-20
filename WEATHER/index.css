@@ -1,0 +1,74 @@
+/* navbar */
+h1
+{
+    margin: auto;
+    text-align: center;
+    font-size:80px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#navbar
+{
+    
+    width: 99%;
+    height: 40px;
+    border-radius: 50px;
+    margin: auto;
+}
+#navbar>#city {
+
+    padding:8px;
+    border-radius: 50px;
+    margin-left: 10px;
+    border:3px solid teal;
+    padding-top: 11px;
+    padding-right: 1150px;
+}
+#navbar>#submit
+{
+    border-radius: 50px;
+    border:4px solid;
+    padding : 10px 40px 10px 40px;
+    background-color: black;
+    color:white;
+    margin-top: 3px;
+    margin-left: 10px;
+    border:none;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#container
+{
+    width: 99%;
+    height: 500px;
+    display: flex;
+    gap: 15px;
+}
+
+#display
+{
+   width:27%;
+   height: 100%;
+   border: 1px solid orangered;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+   border-radius: 15px;
+   border-bottom-width: 15px;
+
+   text-align: center;
+   font-size:25px;
+   font-style: normal;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color:cadetblue;
+}
+
+#display_map
+{
+    width:73%;
+   height: 100%;
+   border: 1px solid lightgreen; 
+   border-radius: 15px;
+   border-bottom-width: 15px;
+   
+}
